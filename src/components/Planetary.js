@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-//import PlanetaryCards from "./PlanetaryCards";
+import PlanetaryCards from "./PlanetaryCards";
 
 function Planetary() {
-  //const [planetary, setPlanetary] = useState([]);
+  const [planetary, setPlanetary] = useState([]);
 
   useEffect(() => {
     axios
@@ -14,7 +14,7 @@ function Planetary() {
       )
       .then(response => {
         const planetaryData = response.data;
-        // setPlanetary([planetaryData]);
+        setPlanetary([planetaryData]);
 
         console.log(planetaryData);
       })
@@ -23,7 +23,22 @@ function Planetary() {
       });
   }, []);
 
-  return <div />;
+  return (
+    <div className="planetary-container">
+      {planetary.map(planetaryInfor => {
+        return (
+          <PlanetaryCards
+            key={planetaryInfor.hdurl}
+            title={planetaryInfor.title}
+            copyright={planetaryInfor.copyright}
+            date={planetaryInfor.date}
+            explanation={planetaryInfor.explanation}
+            hdurl={planetaryInfor.hdurl}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default Planetary;

@@ -17,11 +17,8 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14
 function App() {
   return (
     <div className="App">
+      <h1>NASA Photo Of The Day</h1>
       <Planetary />
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span>🚀 </span>!
-      </p>
     </div>
   );
 }
