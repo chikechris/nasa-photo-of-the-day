@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Planetary from "./components/Planetary";
 
 /*
 // import api key:
@@ -16,9 +17,10 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14
 function App() {
   return (
     <div className="App">
+      <Planetary />
       <p>
         Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
+        app! Have fun <span>🚀 </span>!
       </p>
     </div>
   );
