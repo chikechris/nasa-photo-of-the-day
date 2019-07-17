@@ -1,15 +1,9 @@
 import React from "react";
 
-function PlanetaryCards({ date, explanation, hdurl, title, copyright, id }) {
+function PlanetaryCards({ date, explanation, hdurl, title, copyright }) {
   return (
     <div className="planetary-card" key={hdurl}>
-      <img
-        className="planetary-img"
-        src={hdurl}
-        alt=""
-        width="300"
-        //margin="auto"
-      />
+      <img className="planetary-img" src={hdurl} alt="" width="300" />
       <div className="planetary-info">
         <h2>{title}</h2>
         <h4>{date}</h4>
