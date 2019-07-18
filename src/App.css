@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(78, 63, 207);
 }
 
 .App-logo {
@@ -35,7 +36,6 @@
 .planetary-container {
   max-width: 900px;
   margin: auto;
-  background-color: lightblue;
   border: 2px rgb(9, 8, 41) solid;
 }
 
