@@ -10,39 +10,33 @@ const Div = styled.div`
   justify-content: space-around;
 `;
 const Image = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50px;
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 20px;
 `;
+const Divv = styled.div`
+  width: 50%;
+`;
+
+const Scroll = styled.p`
+  overflow-y: scroll;
+  height: 200px;
+`;
 
 function PlanetaryCards({ date, explanation, hdurl, title, copyright }) {
   return (
-    <Div className="planetary-card" key={hdurl}>
-      <Image className="planetary-img" src={hdurl} alt="" />
-      <div className="planetary-info">
+    <Div key={hdurl}>
+      <Image src={hdurl} alt="" />
+      <Divv>
         <h2>{title}</h2>
         <h4>{date}</h4>
-        <p>{explanation}</p>
+        <Scroll>{explanation}</Scroll>
         <h4>{copyright}</h4>
-      </div>
+      </Divv>
     </Div>
-
-    // <Card>
-    //   <CommentGroup>
-    //     <Comment>
-    //       <Comment.Avatar src={hdurl} width="200" />
-    //       <Comment.Content>
-    //         <Comment.Text> {title}</Comment.Text>
-    //         <Comment.Metadata> {date} </Comment.Metadata>
-    //         <Comment.Text> {explanation} </Comment.Text>
-    //         <Comment.Author> {copyright} </Comment.Author>
-    //       </Comment.Content>
-    //     </Comment>
-    //   </CommentGroup>
-    // </Card>
   );
 }
 

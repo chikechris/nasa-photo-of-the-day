@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 import PlanetaryCards from "./PlanetaryCards";
 
@@ -29,8 +30,14 @@ function Planetary() {
     }
   }, []);
 
+  const Div = styled.div`
+    max-width: 900px;
+    margin: auto;
+    border: 2px rgb(9, 8, 41) solid;
+  `;
+
   return (
-    <div className="planetary-container">
+    <Div>
       {planetary.map(planetaryInfor => {
         return (
           <PlanetaryCards
@@ -43,7 +50,7 @@ function Planetary() {
           />
         );
       })}
-    </div>
+    </Div>
   );
 }
 
