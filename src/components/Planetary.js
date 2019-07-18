@@ -7,20 +7,26 @@ function Planetary() {
   const [planetary, setPlanetary] = useState([]);
 
   useEffect(() => {
-    axios
+    const counter = 6;
 
-      .get(
-        "https://api.nasa.gov/planetary/apod?api_key=v0uiXBdS2nDZXSwnqMZkNxa1d7014rZx6uL3khd6&date=2012-08-14"
-      )
-      .then(response => {
-        const planetaryData = response.data;
-        setPlanetary([planetaryData]);
+    for (let i = 0; i < counter; i++) {
+      axios
+        .get(
+          `https://api.nasa.gov/planetary/apod?api_key=iOC4aWWpH7ekr4DMMwv6e6E02WV1eVhhQdbyhUzS&date=2012-08-${15 +
+            i}`
+        )
+        .then(response => {
+          const planetaryData = response.data;
+          setPlanetary(previousState => {
+            return [...previousState, planetaryData];
+          });
 
-        console.log(planetaryData);
-      })
-      .catch(error => {
-        console.log("ERROR", error);
-      });
+          console.log(planetaryData);
+        })
+        .catch(error => {
+          console.log("ERROR", error);
+        });
+    }
   }, []);
 
   return (
