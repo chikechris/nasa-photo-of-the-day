@@ -4,6 +4,12 @@ import styled from "styled-components";
 
 import PlanetaryCards from "./PlanetaryCards";
 
+const Div = styled.div`
+    max-width: 900px;
+    margin: auto;
+    border: 2px rgb(9, 8, 41) solid;
+  `;
+
 function Planetary() {
   const [planetary, setPlanetary] = useState([]);
 
@@ -30,11 +36,7 @@ function Planetary() {
     }
   }, []);
 
-  const Div = styled.div`
-    max-width: 900px;
-    margin: auto;
-    border: 2px rgb(9, 8, 41) solid;
-  `;
+ 
 
   return (
     <Div>
