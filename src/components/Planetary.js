@@ -4,11 +4,13 @@ import styled from "styled-components";
 
 import PlanetaryCards from "./PlanetaryCards";
 
+import SingleLineGrid from "./SingleLineGrid";
+
 const Div = styled.div`
-    max-width: 900px;
-    margin: auto;
-    border: 2px rgb(9, 8, 41) solid;
-  `;
+  max-width: 900px;
+  margin: auto;
+  border: 2px rgb(9, 8, 41) solid;
+`;
 
 function Planetary() {
   const [planetary, setPlanetary] = useState([]);
@@ -36,8 +38,6 @@ function Planetary() {
     }
   }, []);
 
- 
-
   return (
     <Div>
       {planetary.map(planetaryInfor => {
@@ -52,6 +52,7 @@ function Planetary() {
           />
         );
       })}
+      <SingleLineGrid tileData={planetary} />
     </Div>
   );
 }

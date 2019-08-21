@@ -1,5 +1,4 @@
 import React from "react";
-// import { Comment, CommentGroup, Card } from "semantic-ui-react";
 import styled from "styled-components";
 
 const Div = styled.div`
